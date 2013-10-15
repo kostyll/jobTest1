@@ -1,0 +1,11 @@
+DateTime==4.0
+Django==1.5.4
+argparse==1.2.1
+django-bootstrap-toolkit==2.15.0
+django-debug-toolbar==0.9.4
+django-extensions==1.2.2
+django-twitter-bootstrap==3.0.0
+pytz==2013.7
+six==1.4.1
+wsgiref==0.1.2
+zope.interface==4.0.5

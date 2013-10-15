@@ -1,0 +1,9 @@
+<tbody id="object-list">
+	{% for festival in object_list %}
+	    <tr>
+	      <td>{{ festival.name }}</td>
+	      <td>{{ festival.date_of_start|date:"l, F jS" }} </td>
+	      <td>{{ festival.country }} </td>
+	   	</tr>
+	{% endfor %}                
+</tbody>

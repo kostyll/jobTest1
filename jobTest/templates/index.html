@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  {% load staticfiles %}
+  {% load static %}
+  {% load bootstrap_toolkit %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+
+    <title>
+	 	Film festival info!
+    </title>
+
+    <link href="{{ STATIC_URL }}bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}offcanvas.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row row-offcanvas row-offcanvas-right">
+          {% block content %}
+          	<table class="table table-condensed">
+            <thead>
+              <tr>
+                <td>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-primary btn-mini gropdown-toggle" data-toggle="dropdown">Название
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#" id="sortNameAscBtn">По порядку</a></li>
+                      <li><a href="#" id="sortNameDescBtn">В обратном порядку</a></li>
+                    </ul>
+                  </div>
+                    <input id="filterText" type="text" placeholder="введите шаблон поиска">
+                    <!--<a href="#" id="filterBtn" class="btn btn-small btn-info ">Отфильтровать</a>-->
+                </td>
+                <td>
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-primary btn-mini gropdown-toggle" data-toggle="dropdown">Название
+                      <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#" id="sortDateAscBtn">По порядку</a></li>
+                      <li><a href="#" id="sortDateDescBtn">В обратном порядку</a></li>
+                    </ul>
+                  </div>
+                </td>
+                <td>Страна</td>
+              </tr>
+              </thead>
+                  {% include "object_list.html" %}
+          	</table>
+          {% endblock %} 
+      </div><!--/row-->
+	<h3>Тестовое задание:</h3>
+	<p>Сделать минисайт на django. Сайт содержит упрощенный каталог кинофестивалей. Фестиваль описывается следующими полями:</p>
+	<ul>
+		<li>название</li>
+		<li>страна - текстовое поле</li>
+		<li>дата начала</li>
+	</ul>
+	<p>Сайт содержит одну страницу со списком кинофестивалей. Для кинофестивалей выводятся все имеющиеся поля. Плюс есть возможность изменить сортировку фестивалей: по названию или по дате проведения. Так же список фестивалей можно отфильтровать по названию. Фильтрация и сортировка должны работать без перезагрузки страницы. Дизайн не важен.</p> 
+      <footer>
+        <p>&copy; ВІТІ ДУТ</p>
+      </footer>
+    </div><!--/.container-->
+
+
+    <script src="{{ STATIC_URL }}bootstrap/js/jquery.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+    <script src="{{ STATIC_URL }}offcanvas.js"></script>
+    <script src="{{ STATIC_URL }}ajax_queries.js"></script>
+  </body>
+</html>
